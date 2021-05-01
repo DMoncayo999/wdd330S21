@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team 5 Assingment</title>
+    <link rel="stylesheet" href="styles.css"> 
+
+  <script>
+    function firstTask() {
+        const text_entered = document.getElementById('inputText').value;
+        const display_text = document.getElementById('showText');
+        display_text.innerHTML = 'You wrote: ' + text_entered;
+      }
+      
+    function secondTask() {
+        const num_entered = document.getElementById('inputNum').value;
+        const display_total = document.getElementById('showResult');
+        display_total.innerHTML = 'The result is: ' + add(num_entered);
+       }
+      function add(number) {
+        let result = 0;
+        for (let i = 1; i <= number; i++) {
+          result += i;
+        }
+        return result;
+      }
+      
+    function thirdTask() {
+        const num1 = document.getElementById('inputNum1').value;
+        const num2 = document.getElementById('inputNum2').value;
+        const display_result = document.getElementById('showTotal');
+        const float1 = parseFloat(num1);
+        const float2 = parseFloat(num2);
+        if ((float1 !== NaN) & (float2 !== NaN)) {
+           const total = float1 + float2;
+           display_result.innerHTML = 'The total is: ' + total;
+        }
+      }
+      
+      function getNum(numId) {
+        const number = document.getElementById(numId).value;
+        const numberFloat = parseFloat(number);
+        if (numberFloat !== NaN) {
+          return numberFloat;
+        } else return 0;
+      }
+      function giveTotal(value) {
+        const getAnswer = document.getElementById('answer');
+        getAnswer.innerHTML = 'The answer is: ' + value;
+      }
+      //callback with function calculate 
+      function operation(calculate) {
+          const total = calculate (
+          getNum('number1'),
+          getNum('number2')
+        );
+        giveTotal(total);
+      } 
+      //function declaration div(5, 5) return 1
+      function div(num1, num2) {  
+        return num1 / num2;
+      }
+      //function expression with anonymous function, sub(5, 3) return 2
+      const sub = function(num1, num2) { 
+        return num1 - num2;
+      };
+      // arrow function Es6 mult(2, 5) return 10
+      const mult = (num1, num2) => num1 * num2; 
+   </script>    
+        
+</head>
+  <!--before meeting with team 5-->
+  <body>
+     <!--User input text that is submitted with a button to an area assigned <div> -->    
+    <h1>Task 1</h1>
+    <p>Enter a text in the space provided</p>
+    <input id="inputText" type="text"><br></br>
+    <button id="btn1" onclick="firstTask()">Submit</button>
+    <div id="showText"></div>
+    
+     <!--User input numbers, with button submitted them to <div> giving the result of adding those numbers-->    
+    <h1>Task 2</h1>
+    <p>Enter a number, push the button to be add one by one</p>
+    <input id="inputNum" type="number"><br></br>
+    <button id="btn2" onclick="secondTask()">Add</button>
+    <div id="showResult"></div>
+    
+    <!--An adding machine-->    
+    <h1>Task 3</h1>
+    <p>Enter two numbers to be added</p>
+    <input id="inputNum1" placeholder="enter a number here" type="number">
+    <input id="inputNum2" placeholder="enter a number here" type="number">
+    <button id="btn3" onclick="thirdTask()">+</button>
+    <div id="showTotal"></div>
+    
+    <!--apply to use funtion declaration, funtion express, arrow function and callback function adding new 
+    math operations (subst, multiplication) to the calculator in task 3-->
+    <h1>Stretch Goals</h1>
+    <input id="number1" placeholder="enter a number here" type="number">
+    <input id="number2" placeholder="enter a number here" type="number">
+    <button id="btnDiv" onclick="operation(div)">/</button>
+    <button id="btnSub" onclick="operation(sub)">-</button>
+    <button id="btnMult" onclick="operation(mult)">*</button>
+    <div id="answer"></div>
+    
+  </body>
+</html>

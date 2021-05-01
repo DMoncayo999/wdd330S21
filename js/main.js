@@ -1,5 +1,4 @@
-//  Dynamic Navigation
-
+//  Dynamic portfolio content
 const links = [
       {
         label: "Week1",
@@ -8,6 +7,10 @@ const links = [
       {
         label: "Week2",
         url: "week02/index.html"
+      },
+      {
+        label: "Week3",
+        url: "week03/index.html"
       },
       {
         label: "Challenge1: Todo",
@@ -30,3 +33,4 @@ const nav = ( items ) => {
 }
 
 nav( links )
+
