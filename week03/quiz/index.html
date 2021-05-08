@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html>
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-  <title>WDD 330 Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='description' content='A JavaScript Quiz Game'>
+<title>Quiz Ninja</title>
+<link rel='stylesheet' href='styles.css'>
 </head>
 <body>
-    <section class='dojo'>
-        <div class='quiz-body'>
-            <header>
-                <h1>Quiz Ninja!</h1>
-            </header>
-        </div>
-    </section>
-    <script src='main.js'></script>
-</body>
+<section class='dojo'>
+    <div class='quiz-body'>
+    <header>
+        <div id='score'>Score: <strong>0</strong></div>
+        <h1>Quiz Ninja!</h1>
+    </header>
+    <div id='question'></div>
+    <div id='result'></div>
+    <div id='info'></div>
+    <button id='start'>Click to Start</button>
+    </div>
+</section>
+<script src='main.js'></script>
 
+</body>
 </html>
