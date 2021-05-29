@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+}
+
+body {
+  margin: 5% 20%  20%;
+  border: solid black 1px;
+  border-radius: 4px;
+  min-width: 300px;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  background-color: lightcyan;
+    
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  font-size: 18px;
+  transition: 0.2s;
+  background: white;
+}
+
+ul li:hover {
+  background: lightgray;
+}
+
+ul li.checkMark {
+  background:gray;
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+ul li.checkMark::before {
+  content: '';
+  position: absolute;
+  border-color: red;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.closeBtn:hover {
+  background-color:lightgreen;
+  color: white;
+}
+
+
+.header {
+  background-color: greenyellow;
+  padding: 30px 40px;
+  font-size: 40px;
+  text-align: center;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid black 1px;
+  border-radius: 0;
+  width: 75%;
+  padding: 14px;
+  float: left;
+  font-size: 16px;
+}
+
+
+.addBtn {
+  margin-top: 20px;
+  margin-bottom: 20px;  
+  padding: 10px;
+  width: 25%;
+  background: greenyellow;
+  color: black;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+  border: solid green 1px;
+}
+
+.addBtn:hover {
+  background-color: lightgreen;
+}
+
+.status_task {
+  margin: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border: solid gray 1px;
+  border-radius: 0;
+  background-color: white;
+}
+.status_task button {
+  padding: 5px;
+  margin-left: 10px;
+  background: greenyellow;
+  color: black;  
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+.status_task button:hover {
+ background-color: lightgreen;
+}

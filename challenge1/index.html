@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html>
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-  <title>WDD 330 Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>A To-Do List App</title>    
+    <script src="./main.js" defer></script>
 </head>
+
 <body>
-<h1>Todo</h1>
+
+    <header class="header">
+        <h2>ToDos</h2>
+    </header>
+    
+    <div>
+    <ul id="listTask" >
+        <li>Read </li>
+        <li>Pay electricity bill</li>
+        <li>Do BYU project</li>
+    </ul>
+    </div>
+    
+    <div class="status_task">           
+        <button onclick="showComplete()" class="status_task" >Complete</button>  
+        <button onclick="hideComplete()" class="status_task" >Incomplete</button>  
+        <button onclick="showAll()" class="status_task" >All</button>
+    </div>
+   
+    <div>
+        <form>
+        <input type="text" id="taskInput" class="input" placeholder="Things to do" >
+        <span onclick="newTask()" class="addBtn">Add</span>
+        </form>
+    </div>
+
+
 </body>
 </html>
+
