@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+  <title>WDD 330 Portfolio</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>WDD 330 Portfolio</h1>
+  <h2>Notes: Week 07</h2>
+  <h3>Ajax</h3>
+    <ul>
+    <p>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web <br/>
+    pages without reloading. This enables data to be sent and received in the background, as well as portions of a page to be updated <br/>
+    in response to user events, while the rest of the program continues to run. Web pages were no longer static, but dynamic applications. </p>
+
+      <h3>Function Properties and Methods</h3>
+      <p>For example, all functions have a length property that returns the number of parameters the function has.</p>
+    Let’s use the square() function as an example:<br/>
+    <p>function square(x) {<br/>
+    return x*x;<br/>
+    }<br/>
+     We can see that it accepts one parameter:<br/>
+    square.length<br/>
+    << 1</p>
+        
+      <h3>Call and Apply Methods</h3>
+    <p>The call() method can be used to set the value of this inside a function to an object that is provided as<br/>
+    the first argument.
+    The sayHello() function refers to an unspecific object called this that has a property called name :</p>
+    <p>function sayHello(){<br/>
+    return `Hello, my name is ${ this.name }`;<br/>
+    }</p>
+         <p>We can create some objects that have a name property, then use the call() method to invoke the sayHello() function. 
+    const clark = { name: 'Clark' };<br/>
+    sayHello.call(clark);<br/>
+    << 'Hello, my name is Clark'<br/>
+    
+    If the function that’s called requires any parameters, these need to be provided as arguments after the first argument.<br/>
+     Let's update the sayHello() function to give a more generalized greeting.<br/>
+    function sayHello(greeting='Hello'){<br/>
+        return `${ greeting }, my name is ${ this.name }`;<br/>
+    }<br/>
+    sayHello.call(clark, 'How do you do');<br/>
+    << 'How do you do, my name is Clark'</p>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+

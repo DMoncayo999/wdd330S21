@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+  <title>WDD 330 Portfolio</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>WDD 330 Portfolio</h1>
+  <h2>Notes: Week 08</h2>
+  <h3>Canvas</h3>
+     
+    <ul>
+    <p>Canvas (CHAPTER 12)
+With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. <br/>
+This can improve the performance of our websites by avoiding the need to download images off <br/>
+the network. With canvas, we can draw shapes and lines, arcs and text, gradients and patterns. Canvas <br/>
+gives us the power to manipulate pixels in images and even video. <br/>
+<p> canvas Element</p>
+The text in between the canvas tags will only be shown if the canvas element is not supported by the visitor’s <br/>
+browser. Since drawing on the canvas is done using JavaScript, we’ll need a way to grab the element from the DOM.<br/>
+ We’ll do so by giving our canvas an ID:
+      
+      <h3>Drawing a Rectangle to the Canvas</h3>
+var canvas = document.getElementById("myCanvas"); <br/>
+var context = canvas.getContext("2d"); <br/>
+context.strokeStyle = "red";<br/>
+context.fillStyle = "rgba(0, 0, 255, 0.5)";<br/>
+context.fillRect(10, 10, 100, 100);   <br/>
+context.strokeRect(10, 10, 100, 100); <br/>
+<p><a href="canvas_Ex.html">Canvas practice</a></p>
+
+</p>
+        
+     
+    </ul>
+</body>
+</html>

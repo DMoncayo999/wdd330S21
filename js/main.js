@@ -23,7 +23,16 @@ const links = [
       {
         label: "Challenge1: Todo",
         url: "challenge1/index.html"
+      },
+      {
+        label: "Week7",
+        url: "week07/index.html"
+      },
+      {
+        label: "Week8",
+        url: "week08/index.html"
       }
+      
 ]
 
 const nav = ( items ) => {

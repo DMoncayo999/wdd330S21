@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Canvas practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />    
+  <style>
+     .myCanvas {
+        border: dotted 2px black;
+     }
+  </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>CANVAS</h1>
+      <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+     </canvas>
+     <canvas id="demo2" class="myCanvas" width="200" height="200">
+        Sorry! Your browser doesn’t support Canvas.
+     </canvas>     
+    </main>
+    <script>
+        var canvas = document.getElementById("myCanvas");     
+        var context = canvas.getContext("2d");
+        context.strokeStyle = "red";
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+        context.fillRect(10, 10, 100, 100);   
+        context.strokeRect(10, 10, 100, 100);
+        
+        function drawPattern() {
+        var canvas = document.getElementById("demo2");
+        var context = canvas.getContext("2d");
+        context.strokeStyle = "red";
+        var img = new Image(); 
+        img.src = "pinguin.png";
+    }
+    </script>
+  </body>
+</html>

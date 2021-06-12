@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+  <title>WDD 330 Portfolio</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>WDD 330 Portfolio</h1>
+  <h2>Notes: Week 06</h2>
+  <h3>Further Functions</h3>
+    <ul>
+      <p>In JavaScript, functions are first-class objects, which means they can be passed around in the same<br/>
+       way as every other value. They can have their own properties and methods, as well as accepting other <br/>
+       functions as parameters and being returned by other functions. </p>
+
+      <h3>Function Properties and Methods</h3>
+      <p>For example, all functions have a length property that returns the number of parameters the function has.</p>
+    Let’s use the square() function as an example:<br/>
+    <p>function square(x) {<br/>
+    return x*x;<br/>
+    }<br/>
+     We can see that it accepts one parameter:<br/>
+    square.length<br/>
+    << 1</p>
+        
+      <h3>Call and Apply Methods</h3>
+    <p>The call() method can be used to set the value of this inside a function to an object that is provided as<br/>
+    the first argument.
+    The sayHello() function refers to an unspecific object called this that has a property called name :</p>
+    <p>function sayHello(){<br/>
+    return `Hello, my name is ${ this.name }`;<br/>
+    }</p>
+         <p>We can create some objects that have a name property, then use the call() method to invoke the sayHello() function. 
+    const clark = { name: 'Clark' };<br/>
+    sayHello.call(clark);<br/>
+    << 'Hello, my name is Clark'<br/>
+    
+    If the function that’s called requires any parameters, these need to be provided as arguments after the first argument.<br/>
+     Let's update the sayHello() function to give a more generalized greeting.<br/>
+    function sayHello(greeting='Hello'){<br/>
+        return `${ greeting }, my name is ${ this.name }`;<br/>
+    }<br/>
+    sayHello.call(clark, 'How do you do');<br/>
+    << 'How do you do, my name is Clark'</p>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
