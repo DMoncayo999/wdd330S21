@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+  <title>WDD 330 Portfolio</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>WDD 330 Portfolio</h1>
+  <h2>Notes: Week 10</h2>
+  <h3>Client-side form validation</h3>
+     
+    <ul>
+    <p>Validating Forms  notes (MDN  Web Docs)
+Client-side form validation
+Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct 
+format. 
+Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on 
+the client-side, the user can fix it straight away.
+Client-side validation should not be considered an exhaustive security measure! Your apps should always perform security 
+checks on any form-submitted data on the server-side as well as the client-side..</p>
+
+<p>What is form validation?
+When you enter data (in a form), the browser and/or the web server will check to see that the data is in the correct format 
+and within the constraints set by the application. Validation done in the browser is called client-side validation, while 
+validation done on the server is called server-side validation. 
+If the information is correctly formatted, the application allows the data to be submitted to the server and (usually) 
+saved in a database; if the information isn't correctly formatted, it gives the user an error message explaining what needs 
+to be corrected, and lets them try again.</p>
+
+<p>There are three main reasons for validate our forms:
+    <li> We want to get the right data, in the right format.</li> 
+    <li> We want to protect our users' data.</li> 
+    <li> We want to protect ourselves, malicious users can misuse unprotected forms to damage the application.</li></p> 
+
+<p><a href="fruit-start.html">Built-in form validation example</a></p>
+
+<p>Types of client-side validation
+There are two different types of client-side validation:
+    <li> Built-in form validation </br>  This validation generally doesn't require much JavaScript. Built-in form validation 
+    has better performance than JavaScript, but it is not as customizable as JavaScript validation.</li>
+    <li> JavaScript validation is coded using JavaScript. This validation is completely customizable, but you need to create 
+    it all or use a library.</li></p>
+
+<p>Built-in form validation</br>
+This is done by using validation attributes on form elements. 
+    <li> <span style="color:red">required:</span> Specifies whether a form field needs to be filled in before the form can 
+    be submitted.</li>
+    <li> <span style="color:red">minlength and maxlength:</span> Specifies the minimum and maximum length of textual data
+     (strings)</li>
+    <li> <span style="color:red">min and max:</span> Specifies the minimum and maximum values of numerical input types</li>
+    <li> <span style="color:red">type:</span> Specifies whether the data needs to be a number, an email address, or some
+     other specific preset type.</li> 
+    <li> <span style="color:red">pattern:</span> Specifies a regular expression that defines a pattern the entered data 
+    needs to follow.</li>
+If the data entered in a form field follows all of the rules specified by the above attributes, it is considered valid. If not, 
+it is considered invalid.</p>
+
+<p><a href="full-example-form.html">Full example Built-in validation </a></p>        
+
+<p>Validating forms using JavaScript</br>
+You must use JavaScript if you want to take control over the look and feel of native error messages or to deal with legacy 
+browsers that do not support HTML's built-in form validation.</p>
+
+<p>The Constraint Validation API
+Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following 
+form element DOM interfaces:</br>
+    • HTMLButtonElement (represents a <span><</span>button<span>></span> element)<br/>
+    • HTMLFieldSetElement (represents a <span><</span>fieldset<span>></span> element)<br/>
+    • HTMLInputElement (represents an <span><</span>input<span>></span> element)<br/>
+    • HTMLOutputElement (represents an <span><</span>output<span>></span> element)<br/>
+    • HTMLSelectElement (represents a <span><</span>select<span>></span> element)<br/>
+    • HTMLTextAreaElement (represents a <span><</span>textarea<span>></span> element)</p>
+
+<p><a href="form-js-validation.html">Full example Java Script validation </a></p> 
+
+<p>Validating forms without a built-in API
+In some cases, such as legacy browser support or custom controls, you won't be able to or won't want to use the Constraint 
+Validation API.You're still able to use JavaScript to validate your form, but you'll just have to write your own.
+To validate a form, ask yourself a few questions:<br/>
+<li>What kind of validation should I perform?
+You need to determine how to validate your data: string operations, type conversion, regular expressions, and so on. It's up to you.</li>
+<li>What should I do if the form doesn't validate? This is clearly a UI matter. You have to decide how the form will behave.
+Does the form send the data anyway? Should you highlight the fields that are in error? Should you display error messages?</li>
+<li>How can I help the user to correct invalid data?
+In order to reduce the user's frustration, it's very important to provide as much helpful information as possible in order to
+guide them in correcting their inputs. You should offer up-front suggestions so they know what's expected, as well as clear error
+messages.</li></p>   
+    </ul>
+</body>
+</html>

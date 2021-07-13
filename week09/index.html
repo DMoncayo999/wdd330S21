@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+  <title>WDD 330 Portfolio</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>WDD 330 Portfolio</h1>
+  <h2>Notes: Week 09</h2>
+  <h3>The Window Object</h3>
+     
+    <ul>
+    <p>The window object (CHAPTER 09)
+Every JavaScript environment has a global object. Any variables that are created in the global scope are actually properties
+ of this object, and any functions are methods of it. In a browser environment the global </br>
+object is the window object, which represents the browser window that contains a web page.</p>
+
+<p>The Browser Object Model
+The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information 
+about the browser and computer screen.
+If you don’t know the name of the global object, you can also refer to it using the keyword this in the global scope.</br>
+ The following code provides a quick way of assigning the variable global to the global object:
+// from within the global scope </br>
+const global = this; <br/></p>
+
+<p>Animation
+The setTimeOut() and setInterval() methods can be used to animate elements on a web page. As an example, let’s create 
+a web page that shows a colored square, and make it rotate.</p> 
+
+<p><a href="animation_Ex.html">Animation Practice</a></p>
+
+<p>HTML5 APIs
+The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, 
+geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers 
+access, and control new features that appear in the latest devices.
+
+<p>HTML5 Web Storage</p>
+The Web Storage API provides a key-value store on the client’s computer that is similar to using cookies but has fewer
+ restrictions, more storage capacity, and is generally easier to use. This makes it perfect for storing information about 
+ users, as well as storing application-specific information that can then be used during future sessions.
+Here is a basic example of storing information. To save a value locally, use:</br>
+localStorage.setItem('name', 'Walter White');</br>
+To illustrate that it’s being saved locally, try completely closing your browser, reopening it, and entering the following code
+ in the console:</br>
+localStorage.getItem('name'); </br>
+<< "Walter White" </br></p>
+<p><a href="factors.html">Factorization Example</a></p>        
+<p><a href="websocket.html">Websocket Example</a></p>  
+
+   
+    </ul>
+</body>
+</html>
