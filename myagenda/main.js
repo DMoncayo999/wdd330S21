@@ -34,7 +34,7 @@ const showCalendar = (calendar) => {
 
   for (let i = 1; i < 43; i++) {
       cal.addDays(1)
-      calendarArray.push( '<a href="#" ' + ( now.getMonth() !== cal.getMonth() ? ' class="noMonth" ' : ( now.getDate() === cal.getDate() ? 'class="today"' :'class="day"' ) ) + ' onclick="onDayOfTheMonth(event)" >' + `${ cal.getDate() }` + '</a>' )
+      calendarArray.push( '<a href="#" ' + ( calendar.getMonth() !== cal.getMonth() ? 'class="noMonth" ' : ( now.getMonth() !== cal.getMonth() && now.getDate() === cal.getDate() ? 'class="today"' : 'class="day"' ) ) + ' onclick="onDayOfTheMonth(event)" >' + `${ cal.getDate() }` + '</a>' )
   }
 
 
