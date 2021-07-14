@@ -9,7 +9,9 @@ Date.prototype.addMonths = function(months) {
       return this
 }
 
-const calendario = new Date()
+var myCalendar = new Date()
+var myAgenda = (localStorage.getItem("agenda")==null) ? {} : JSON.parse(localStorage.getItem("agenda"))
+localStorage.setItem("agenda", JSON.stringify( myAgenda ))
 
 
 const showCalendar = (calendar) => {
@@ -46,23 +48,52 @@ const showCalendar = (calendar) => {
 }
 
 const prevBtn = () => {
-  calendario.addMonths(-1)
-  showCalendar(calendario)
+  myCalendar.addMonths(-1)
+  showCalendar(myCalendar)
 }
 const nextBtn = () => {
-  calendario.addMonths(1)
-  showCalendar(calendario)
+  myCalendar.addMonths(1)
+  showCalendar(myCalendar)
 }
 
 const onDayOfTheMonth = (event) => {
-  // debugger
   let d = parseInt( event.currentTarget.innerText )
-  calendario.setDate( d )
+  myCalendar.setDate( d )
   if ( event.currentTarget.className === 'noMonth' ) {
-     if (d<14) calendario.addMonths(1)
-     else calendario.addMonths(-1)
+     if (d<14) myCalendar.addMonths(1)
+     else myCalendar.addMonths(-1)
   }
-  showCalendar(calendario)
+  // load Agenda
+  myAgenda = JSON.parse(localStorage.getItem("agenda"))
+
+  let day = myCalendar.toDateString()
+  if ( myAgenda[day] ) {
+    let data = myAgenda[day]
+    document.querySelectorAll("input[name]")
+                  .forEach( (e,i) => {
+                    let val = data[e.name]
+                    e.value = val ? val : ''
+                  } )
+  } else {
+    document.querySelectorAll("input[name]")
+                  .forEach( (e,i) => {
+                    e.value = ''
+                  } )
+  }
+
+  showCalendar(myCalendar)
 }
 
-showCalendar(calendario)
+const onAgendaSave = (event) => {
+              event.preventDefault()
+              let data = {}
+              // Object.keys( data ).forEach( key => { data[key] = AuthContext[key] })
+              document.querySelectorAll("input[name]")
+                    .forEach( (e,i) => {
+                      data[e.name] = e.value
+                    } )
+              myAgenda[`${myCalendar.toDateString()}`] = data
+              localStorage.setItem("agenda", JSON.stringify( myAgenda ))
+}
+
+showCalendar(myCalendar)
