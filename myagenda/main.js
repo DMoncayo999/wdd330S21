@@ -1,79 +1,50 @@
-const date = new Date();
 
-//const dayOfMonth = document.querySelector(".days");
+//global function for calendar
+Date.prototype.addDays = function(days) {
+      this.setDate( this.getDate() + days )
+      return this
+}
+Date.prototype.addMonths = function(months) {
+      this.setMonth( this.getMonth() + months )
+      return this
+}
 
-const months = 
- ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Ocbober",
- "November", "December"
- ];
-    
-document.querySelectorAll(".calendar span").forEach( (e,i) => { e.innerHTML = months[date.getMonth()+i]}) ;
-document.querySelector(".agenda h1").innerHTML = date.toDateString();
+/*
+const urlParams = window.location.replaceAll(/([^&=]+)=?([^&]*)/g, (m, k , v) => {
+    console.log("m", m, "k", k, "v", v)
+})
+*/
+var now = new Date()
+var req = { query: {} }
+var year = req.query.year || 1900 + now.getYear()
+var month = req.query.month || now.getMonth()
+var day = req.query.day || now.getDate()
 
-/*let days = "";
+console.log('year', year, 'month', month, 'day', day)
+now = new Date( year, month, day )
+var cal = new Date( year, month, 1)
+cal.addDays(-1 * ( cal.getDay()+1 ) )
+  
+const calendar = new Date()
 
-for (let i = 1; i <= 31; i++) {
-    days+= `<div>${i}</div>`; 
-    dayOfMonth.innerHTML = days;
- } */
- 
- 
- 
-/*const date = new Date();
+document.querySelector(".agenda h1").innerHTML = calendar.toDateString()
+    
+document.querySelectorAll(".calendar span").forEach( (e,i) => { 
+    calendar.addMonths(i)
+    e.innerHTML = calendar.toLocaleString('default', { month: 'long'})
+})
 
-const renderCalendar = () => { 
+var calendarArray = ['<div class="weekday">S</div>', 
+            '<div class="weekday">M</div>',
+            '<div class="weekday">T</div>',
+            '<div class="weekday">W</div>',
+            '<div class="weekday">T</div>',
+            '<div class="weekday">F</div>',
+            '<div class="weekday">S</div>' ]
+            
+for (let i = 1; i < 43; i++) {
+    calendarArray.push( '<a href="#" class="day" >' + `${ cal.addDays(1).getDate() }` + '</a>' )
+}
+document.querySelector('.date').innerHTML = calendarArray.join('')
 
-    date.setDate(1);
-    
-    const dayOfMonth = document.querySelector(".days");
-    
-    const lastDay = new Date(date.getFullYear(), date.getMonth() + 1,0).getDate();
-    
-    const prevLastDay = new Date(date.getFullYear(), date.getMonth(), 0).getDate();
-    
-    const firtDayIndex = date.getDay();
-    
-    const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1,0).getDay();
-    
-    const nextDays = 7 - lastDayIndex - 1;
-    
-    const months = 
-     ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Ocbober",
-     "November", "December"
-     ];
-        
-    document.querySelectorAll(".calendar span").forEach( (e,i) => { e.innerHTML = months[date.getMonth()+i]}) ;
-    document.querySelector(".agenda h1").innerHTML = date.toDateString();
-    
-    let days = "";
-    
-    for (let f = firstDayIndex; f > 0; f--) {
-        days += `<div class="prev-days">${prevLastDay - f + 1}</div>`;   
-    }
-    
-    for (let l = 1; l <= lastDay; l++) {
-        if(l === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-            days += `<div>${l}</div>`; 
-      }
-    }
-    
-    for (let n = 1; n <= nextDays; n++) {
-        days += `<div class="next-days">${n}</div>`
-        dayOfMonth.innerHTML = days; 
-    }
-};
 
-document.querySelector(".prev").addEventListener("click", () => { 
- date.setMonth(date.getMonth() - 1);
- renderCalendar();
-});
-
-document.querySelector(".next").addEventListener("click", () => {
- date,setMonth(date.getMonth() + 1);
- renderCalendar();
-});
-
-renderCalendar();
- */
- 
- 
