@@ -42,7 +42,7 @@ const showCalendar = (calendar) => {
 
   document.querySelectorAll(".cal-header .monthName").forEach( (e,i) => {
       calendar.addMonths(i)
-      e.innerHTML = calendar.toLocaleString('default', { month: 'long'}) + ' - ' + calendar.toLocaleString('default', { year: 'numeric'})
+      e.innerHTML = calendar.toLocaleString('default', { month: 'long'}) + ' - '  + calendar.toLocaleString('default', { year: 'numeric'})
   })
   document.querySelector('.date').innerHTML = calendarArray.join('')
 }
