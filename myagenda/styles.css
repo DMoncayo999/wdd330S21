@@ -18,12 +18,12 @@ body {
   padding: 0;
   font-family: Pangolin, cursive;
 }
-  
+
 main  {
   padding: 0;
   margin: 0;
   width: 100%;
-} 
+}
 
 h1.home {
   font-size: 60px;
@@ -80,11 +80,12 @@ p.home {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 1rem;  
+    grid-gap: 1rem;
 }
 
 .calendar {
   width: 300px;
+  height: 340px;
   background-color: #55dde0;
   box-shadow:5px 10px 10px black;
   border-radius: 10px;
@@ -93,44 +94,36 @@ p.home {
 }
 
 
-.prev {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  background-color:#f6ae2d;
-  color: black;
-  border-radius: 10px;
-
-}
-
-.next {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #f6ae2d;
-  color: black;
-  float: right;
-  border-radius: 10px;
-}
-
 .cal-header {
   padding: 0.5rem;
   display: flex;
   align-items: center;
 }
 
-.cal-header > div {
-  flex: 1; 
+.cal-header .prevDiv,
+.cal-header .nextDiv {
+  flex: 1;
 }
 
-.cal-header span {
+.prev,
+.next {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color:#f6ae2d;
+  color: black;
+  border-radius: 10px;
+}
+
+.cal-header .monthName {
+  flex: 5;
   font-size: 1.5rem;
   color: blue;
   text-shadow: 0.5px 0.5px 4px red;
   font-family: Montserrat, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  
+
 }
 
 .calendar .date {
@@ -156,26 +149,16 @@ p.home {
 
 }
 
-a.prev-days {
+a.noMonth {
   text-decoration: none;
   color: gray;
   align-items: center;
   justify-content: center;
-  height: 25px; 
+  height: 25px;
   display: flex;
   align-items: center;
   border-radius: 20%;
-    
-}
-a.next-days {
-  text-decoration: none;
-  color: gray;
-  align-items: center;
-  justify-content: center;
-  height: 25px; 
-  display: flex;
-  align-items: center;
-  border-radius: 20%;
+
 }
 
 .calendar .day {
@@ -191,7 +174,7 @@ a.next-days {
 
 .calendar a:hover {
   background-color: #ddd;
-  
+
 }
 
 .agenda {
@@ -226,9 +209,9 @@ a.next-days {
   min-height: 80px;
   width: 100%;
 }
- 
 
-@media screen and (min-width: 1200px) { 
+
+@media screen and (min-width: 1200px) {
 .calendar {
   width: 400px;
   margin-left: 2em;
@@ -236,9 +219,9 @@ a.next-days {
 
 .agenda {
   width: 600px;
-}   
+}
 
 }
 
-  
+
 

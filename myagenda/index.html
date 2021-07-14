@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agenda</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src='main.js' defer ></script>
 </head>
-  
+
 <body>
 <main>
     <header class="main-header">
@@ -18,15 +18,14 @@
                 <li class="main-header__item"><a class="active" href="#">Agenda</a></li>
             </ul>
         </nav>
-    </header> 
+    </header>
 <div class="container">
- <div> 
      <div class="calendar">
-        <div class="cal-header">
-          <div><a href="#" class="prev">&#8249;</a></div>
-          <div><span></span></div>
-          <div><a href="#" class="next">&#8250;</a></div>
-        </div>  
+         <div class="cal-header">
+            <div class="prevDiv"><a href="#" class="prev" onclick="prevBtn(event)">&#8249;</a></div>
+            <div class="monthName"></div>
+            <div class="nextDiv"><a href="#" class="next" onclick="nextBtn(event)">&#8250;</a></div>
+         </div>
          <div class="date">
             <div class="weekday">S</div>
             <div class="weekday">M</div>
@@ -35,7 +34,7 @@
             <div class="weekday">T</div>
             <div class="weekday">F</div>
             <div class="weekday">S</div>
-            
+
            <div><a href="#" class="prev-days" >26</a></div>
            <div><a href="#" class="prev-days" >27</a></div>
            <div><a href="#" class="prev-days" >28</a></div>
@@ -63,12 +62,12 @@
            <div><a href="#" class="day" >20</a></div>
            <div><a href="#" class="day" >21</a></div>
            <div><a href="#" class="day" >22</a></div>
-           <div><a href="#" class="day" >23</a></div> 
+           <div><a href="#" class="day" >23</a></div>
            <div><a href="#" class="day" >24</a></div>
-           <div><a href="#" class="day" >25</a></div>  
+           <div><a href="#" class="day" >25</a></div>
            <div><a href="#" class="day" >26</a></div>
            <div><a href="#" class="day" >27</a></div>
-           <div><a href="#" class="day" >28</a></div>           
+           <div><a href="#" class="day" >28</a></div>
            <div><a href="#" class="day" >29</a></div>
            <div><a href="#" class="day" >30</a></div>
            <div><a href="#" class="day" >31</a></div>
@@ -89,7 +88,7 @@
             <div><span>11:00 am</span><input type="text" size="35" placeholder="Write here"/></div>
             <div><span>12:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
             <div><span>01:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
-            <div><span>02:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>  
+            <div><span>02:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
             <div><span>03:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
             <div><span>04:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
             <div><span>05:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
@@ -98,7 +97,7 @@
             <div><span>08:00 pm</span><input type="text" size="35" placeholder="Write here"/></div>
         </div>
     </div>
- 
+
 </div>
     </main>
  </body>
